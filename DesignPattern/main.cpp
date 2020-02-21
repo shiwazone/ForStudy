@@ -24,6 +24,7 @@ int main()
     {
         car = facotry.CreateCar(carStoreBegin);
         car->Run();
+        delete car;
         ++index;
         carStoreBegin = carStores[index];
     }    
