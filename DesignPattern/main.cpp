@@ -1,5 +1,6 @@
 #include <iostream>
 #include "./FactoryModel/SimpleFactory.h"
+#include "./FactoryModel/FactoryMethod.h"
 using namespace std;
 
 int main()
@@ -28,6 +29,22 @@ int main()
         ++index;
         carStoreBegin = carStores[index];
     }    
+#endif
+
+#ifdef FACTORY_METHOD_
+    MonitorAgent agent;
+    vector<IMonitor*> monitors;
+    for (size_t i = 0; i < 10; i++)
+    {
+        monitors.push_back(agent.SaleMonitor());
+    }
+    
+    for (size_t i = 0; i < 10; i++)
+    {
+        monitors.at(i)->Work();
+    }
+
+    
 #endif
     return 0;
 }
