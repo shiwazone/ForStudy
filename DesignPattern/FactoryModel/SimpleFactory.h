@@ -1,5 +1,5 @@
 #pragma once
-#define SIMPLE_FACTORY_
+//#define SIMPLE_FACTORY_
 
 #ifdef SIMPLE_FACTORY_
 #include <iostream>

@@ -1,6 +1,7 @@
 #include <iostream>
 #include "./FactoryModel/SimpleFactory.h"
 #include "./FactoryModel/FactoryMethod.h"
+#include "./FactoryModel/AbstractFactory.h"
 using namespace std;
 
 int main()
@@ -45,6 +46,36 @@ int main()
     }
 
     
+#endif
+
+#ifdef ABSTRACT_FACTORY_
+    IMonitor* monitor = NULL;
+    IB_Ultrasound* BSound = NULL;
+    IMedicalFactory* factory = NULL;
+
+    factory = new Mindray;
+    monitor = factory->MakeMonitor();
+    BSound = factory->Make_B_Ultrasound();
+    monitor->Work();
+    BSound->Work();
+    delete monitor;
+    delete BSound;
+
+    factory = new Edan;
+    monitor = factory->MakeMonitor();
+    BSound = factory->Make_B_Ultrasound();
+    monitor->Work();
+    BSound->Work();
+    delete monitor;
+    delete BSound;
+
+    factory = new Philips;
+    monitor = factory->MakeMonitor();
+    BSound = factory->Make_B_Ultrasound();
+    monitor->Work();
+    BSound->Work();
+    delete monitor;
+    delete BSound;
 #endif
     return 0;
 }

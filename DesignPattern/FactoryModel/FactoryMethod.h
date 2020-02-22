@@ -1,5 +1,5 @@
 #pragma once
-#define FACTORY_METHOD_
+//#define FACTORY_METHOD_
 
 #ifdef FACTORY_METHOD_
 #include <iostream>
