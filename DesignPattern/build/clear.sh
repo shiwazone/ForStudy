@@ -1,5 +1,7 @@
-for /f "delims=" %%i in ('dir/b/s/a-d^|findstr/ev "\.bat | CMakeLists.txt"') do del %%i
-rmdir /s/q .\bin
-rmdir /s/q .\lib
-rmdir /s/q .\CMakeFiles
+shopt -s extglob
+rm -rf !(*.bat|*.sh|CMakeLists.txt)
+rm -rf ./bin
+rm -rf ./lib
+rm -rf ./CMakeFiles
+shopt -u extglob
 

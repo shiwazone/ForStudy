@@ -1,5 +1,9 @@
 #include<iostream>
+#ifdef WIN32
 #include "string\MyString.h"
+#else
+#include "string/MyString.h"
+#endif
 using namespace std;
 
 int main()
