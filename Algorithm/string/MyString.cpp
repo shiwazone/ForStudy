@@ -1,7 +1,8 @@
 #include "MyString.h"
 #include <string.h>
 MyString::MyString()
-:m_pData(nullptr),
+#define NULLPtr 0
+:m_pData(NULLPtr),
 m_len(0)
 {
 
@@ -9,16 +10,16 @@ m_len(0)
 
 MyString::~MyString()
 {
-    if (nullptr != m_pData)
+    if (NULLPtr != m_pData)
     {
         delete [] m_pData;
-        m_pData = nullptr;
+        m_pData = NULLPtr;
         m_len = 0;
     }
     
 }
 MyString::MyString(const MyString& str)
-:m_pData(nullptr),
+:m_pData(NULLPtr),
 m_len(0)
 {   
     if (!str.empty())
@@ -31,10 +32,10 @@ m_len(0)
 }
 
 MyString::MyString(const char* str)
-:m_pData(nullptr),
+:m_pData(NULLPtr),
 m_len(0)
 {
-    if (nullptr != str)
+    if (NULLPtr != str)
     {
         m_len = strlen(str);
         m_pData = new char[m_len + 1];
